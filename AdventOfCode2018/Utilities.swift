@@ -20,3 +20,18 @@ func read(file: String, of type: String) -> [String] {
     }
     return [""]
 }
+
+@_transparent
+@discardableResult
+public func measure(label: String? = nil, _ block: @escaping () -> Void) -> CFAbsoluteTime {
+    let start = CFAbsoluteTimeGetCurrent()
+    block()
+    let end = CFAbsoluteTimeGetCurrent()
+    if let label = label {
+        print(label, "▿")
+        print("\tExecution time: \(end - start)s\n")
+    } else {
+        print("Execution time: \(end - start)s\n")
+    }
+    return end - start
+}
