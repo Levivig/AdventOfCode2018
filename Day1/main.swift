@@ -8,8 +8,28 @@
 
 import Foundation
 
+// MARK: Get the input date
 let input = read(file: "data", of: "txt")
 let numberInput = input.compactMap({Int($0)})
-let result = numberInput.reduce(0, +)
 
-print(result)
+// MARK: - Part 1
+let result1 = numberInput.reduce(0, +)
+print(result1)
+
+// MARK: - Part 2
+var currentFreq = 0
+var seen: Set = [currentFreq]
+
+var index = 0
+while true {
+    let change = numberInput[index]
+    currentFreq += change
+
+    if seen.insert(currentFreq).inserted {
+        // New frequency value
+    } else {
+        print(currentFreq)
+        break
+    }
+    index = (index + 1) % numberInput.count
+}
