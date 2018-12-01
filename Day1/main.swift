@@ -14,7 +14,7 @@ let numberInput = input.compactMap({Int($0)})
 
 // MARK: - Part 1
 let result1 = numberInput.reduce(0, +)
-print(result1)
+print("Part 1: \(result1)")
 
 // MARK: - Part 2
 var currentFreq = 0
@@ -28,7 +28,7 @@ while true {
     if seen.insert(currentFreq).inserted {
         // New frequency value
     } else {
-        print(currentFreq)
+        print("Part 2: \(currentFreq)")
         break
     }
     index = (index + 1) % numberInput.count
