@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: Get the input date
+// MARK: Get the input data
 let input = read(file: "data", of: "txt")
 let numberInput = input.compactMap({Int($0)})
 
