@@ -224,3 +224,4 @@ Icon.png
 
 # End of https://www.gitignore.io/api/tower,swift,xcode,macos,objective-c
 xcshareddata
+Day*/day*
