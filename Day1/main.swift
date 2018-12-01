@@ -8,5 +8,8 @@
 
 import Foundation
 
-print("Hello, World!")
+let input = read(file: "data", of: "txt")
+let numberInput = input.compactMap({Int($0)})
+let result = numberInput.reduce(0, +)
 
+print(result)
