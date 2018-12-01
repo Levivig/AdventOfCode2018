@@ -21,17 +21,15 @@ var currentFreq = 0
 var seen: Set = [currentFreq]
 
 var index = 0
-measure {
-    while true {
-        let change = numberInput[index]
-        currentFreq += change
+while true {
+    let change = numberInput[index]
+    currentFreq += change
 
-        if seen.insert(currentFreq).inserted {
-            // New frequency value
-        } else {
-            print("Part 2: \(currentFreq)")
-            break
-        }
-        index = (index + 1) % numberInput.count
+    if seen.insert(currentFreq).inserted {
+        // New frequency value
+    } else {
+        print("Part 2: \(currentFreq)")
+        break
     }
+    index = (index + 1) % numberInput.count
 }
