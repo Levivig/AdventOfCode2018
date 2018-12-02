@@ -54,18 +54,17 @@ for code in input {
 print("Part 1: \(doubleLetterCodes * tripleLetterCodes)")
 
 // MARK: - Part 2
-func levDis(_ str1: String, _ str2: String) -> Int {
-    let empty = [Int](repeating: 0, count: str2.count)
-    var last = [Int](0...str2.count)
+func distanceHamming(between string1: String, string2: String) -> Int {
+    guard string1.count == string2.count else { return Int.max }
 
-    for (idx, char1) in str1.enumerated() {
-        var cur = [idx + 1] + empty
-        for (jdx, char2) in str2.enumerated() {
-            cur[jdx + 1] = char1 == char2 ? last[jdx] : min(last[jdx], last[jdx + 1], cur[jdx]) + 1
+    var dist = 0
+    for idx in 0..<string1.count {
+        let index = string1.index(string1.startIndex, offsetBy: idx)
+        if string1[index] != string2[index] {
+            dist += 1
         }
-        last = cur
     }
-    return last.last!
+    return dist
 }
 
 measure {
@@ -73,14 +72,14 @@ measure {
         let code = input[idx]
         for idx2 in idx+1..<input.count {
             let code2 = input[idx2]
-            if levDis(code, code2) <= 1 {
+            if distanceHamming(between: code, string2: code2) <= 1 {
                 #if os(macOS)
                 let arr1 = NSMutableOrderedSet(array: Array(code))
                 let arr2 = NSMutableOrderedSet(array: Array(code2))
                 _ = arr1.intersect(arr2)
                 if let res = arr1.array as? [Character] {
                     let answer = res.map({String($0)})
-                    print("Part 2 :\(answer.joined())")
+                    print("Part 2: \(answer.joined())")
                 }
                 #else
                 print("Part 2: \(code, code2)")
