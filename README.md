@@ -13,7 +13,7 @@ docker pull levivig/adventofcode
 # run it in interactive mode
 docker run -it levivig/adventofcode /bin/bash
 
-./run.sh 1
+./run.sh 2
 ```
 
 ### macOS
@@ -26,9 +26,9 @@ Run any day with the `run.sh` script.
 
 #### `run.sh` example
 ```sh
-./run.sh 1
+./run.sh 2
 ``` 
-Will run the first days' exercises.
+Will run the second day.
 
 Versions
 --------
