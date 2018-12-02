@@ -73,6 +73,7 @@ for idx in 0..<input.count {
     for idx2 in idx+1..<input.count {
         let code2 = input[idx2]
         if levDis(code, code2) <= 1 {
+            #if os(macOS)
             let arr1 = NSMutableOrderedSet(array: Array(code))
             let arr2 = NSMutableOrderedSet(array: Array(code2))
             _ = arr1.intersect(arr2)
@@ -80,6 +81,9 @@ for idx in 0..<input.count {
                 let answer = res.map({String($0)})
                 print("Part 2 :\(answer.joined())")
             }
+            #else
+            print(code, code2)
+            #endif
         }
     }
 }
