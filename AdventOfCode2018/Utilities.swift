@@ -23,15 +23,15 @@ func read(file: String, of type: String) -> [String] {
 
 @_transparent
 @discardableResult
-public func measure(label: String? = nil, _ block: @escaping () -> Void) -> CFAbsoluteTime {
-    let start = CFAbsoluteTimeGetCurrent()
+public func measure(label: String? = nil, _ block: @escaping () -> Void) -> TimeInterval {
+    let start = Date()
     block()
-    let end = CFAbsoluteTimeGetCurrent()
+    let end = Date()
     if let label = label {
         print(label, "▿")
-        print("\tExecution time: \(end - start)s\n")
+        print("\tExecution time: \(end.timeIntervalSince(start))s\n")
     } else {
-        print("Execution time: \(end - start)s\n")
+        print("Execution time: \(end.timeIntervalSince(start))s\n")
     }
-    return end - start
+    return end.timeIntervalSince(start)
 }
