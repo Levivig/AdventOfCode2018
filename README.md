@@ -10,6 +10,7 @@ Usage
 ```sh
 # get the latest image
 docker pull levivig/adventofcode
+# run it in interactive mode
 docker run -it levivig/adventofcode /bin/bash
 
 ./run.sh 1
