@@ -67,23 +67,23 @@ func distanceHamming(between string1: String, string2: String) -> Int {
     return dist
 }
 
+func getResult(_ code1: String, code2: String) -> String {
+    var res: String = ""
+    for idx in 0..<code1.count {
+        let index = code1.index(code1.startIndex, offsetBy: idx)
+        res = code1.filter({_ in code1[index] == code2[index]})
+    }
+    return res
+}
+
 measure {
     for idx in 0..<input.count {
         let code = input[idx]
         for idx2 in idx+1..<input.count {
             let code2 = input[idx2]
             if distanceHamming(between: code, string2: code2) <= 1 {
-                #if os(macOS)
-                let arr1 = NSMutableOrderedSet(array: Array(code))
-                let arr2 = NSMutableOrderedSet(array: Array(code2))
-                _ = arr1.intersect(arr2)
-                if let res = arr1.array as? [Character] {
-                    let answer = res.map({String($0)})
-                    print("Part 2: \(answer.joined())")
-                }
-                #else
-                print("Part 2: \(code, code2)")
-                #endif
+                print("Part2: \(getResult(code, code2: code2))")
+                break
             }
         }
     }
