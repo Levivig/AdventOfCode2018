@@ -67,7 +67,7 @@ func distanceHamming(between string1: String, string2: String) -> Int {
     return dist
 }
 
-func getResult(_ code1: String, code2: String) -> String {
+private func getResult(_ code1: String, code2: String) -> String {
     var res: String = ""
     for idx in 0..<code1.count {
         let index = code1.index(code1.startIndex, offsetBy: idx)
@@ -77,8 +77,7 @@ func getResult(_ code1: String, code2: String) -> String {
 }
 
 measure {
-    for idx in 0..<input.count {
-        let code = input[idx]
+    for (idx, code) in input.enumerated() {
         for idx2 in idx+1..<input.count {
             let code2 = input[idx2]
             if distanceHamming(between: code, string2: code2) <= 1 {
