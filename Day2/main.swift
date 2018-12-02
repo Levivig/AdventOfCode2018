@@ -68,22 +68,24 @@ func levDis(_ str1: String, _ str2: String) -> Int {
     return last.last!
 }
 
-for idx in 0..<input.count {
-    let code = input[idx]
-    for idx2 in idx+1..<input.count {
-        let code2 = input[idx2]
-        if levDis(code, code2) <= 1 {
-            #if os(macOS)
-            let arr1 = NSMutableOrderedSet(array: Array(code))
-            let arr2 = NSMutableOrderedSet(array: Array(code2))
-            _ = arr1.intersect(arr2)
-            if let res = arr1.array as? [Character] {
-                let answer = res.map({String($0)})
-                print("Part 2 :\(answer.joined())")
+measure {
+    for idx in 0..<input.count {
+        let code = input[idx]
+        for idx2 in idx+1..<input.count {
+            let code2 = input[idx2]
+            if levDis(code, code2) <= 1 {
+                #if os(macOS)
+                let arr1 = NSMutableOrderedSet(array: Array(code))
+                let arr2 = NSMutableOrderedSet(array: Array(code2))
+                _ = arr1.intersect(arr2)
+                if let res = arr1.array as? [Character] {
+                    let answer = res.map({String($0)})
+                    print("Part 2 :\(answer.joined())")
+                }
+                #else
+                print("Part 2: \(code, code2)")
+                #endif
             }
-            #else
-            print(code, code2)
-            #endif
         }
     }
 }
