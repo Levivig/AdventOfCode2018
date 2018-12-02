@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B6DBABA21B273B4008851BA /* data.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0E47B721B26B4400F0FC76 /* data.txt */; };
 		1B6DBAC521B2916A008851BA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBAC421B2916A008851BA /* main.swift */; };
+		1B9F541B21B3415700A74B5D /* data.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B9F541A21B3414300A74B5D /* data.txt */; };
 		1BC6C33821988C7700320139 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6C33721988C7700320139 /* main.swift */; };
 		1BC6C34521988D7100320139 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC6C34421988D7100320139 /* main.swift */; };
 		1BD15F9421B29A2D0025E0F1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBABB21B273F1008851BA /* Utilities.swift */; };
@@ -29,12 +30,13 @@
 		};
 		1B6DBAC021B2916A008851BA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				1B9F541B21B3415700A74B5D /* data.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1BC6C33221988C7700320139 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -52,6 +54,7 @@
 		1B6DBABB21B273F1008851BA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1B6DBAC221B2916A008851BA /* Day2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day2; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6DBAC421B2916A008851BA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1B9F541A21B3414300A74B5D /* data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
 		1BC6C33421988C7700320139 /* AdventOfCode2018 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdventOfCode2018; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC6C33721988C7700320139 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1BC6C34221988D7100320139 /* Day1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Day1; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,13 +62,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1B6DBABF21B2916A008851BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1BC6C33121988C7700320139 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				1B6DBAC421B2916A008851BA /* main.swift */,
+				1B9F541A21B3414300A74B5D /* data.txt */,
 			);
 			path = Day2;
 			sourceTree = "<group>";
@@ -130,8 +127,8 @@
 			buildConfigurationList = 1B6DBAC621B2916A008851BA /* Build configuration list for PBXNativeTarget "Day2" */;
 			buildPhases = (
 				1B6DBABE21B2916A008851BA /* Sources */,
-				1B6DBABF21B2916A008851BA /* Frameworks */,
 				1B6DBAC021B2916A008851BA /* CopyFiles */,
+				1B9F541C21B3422300A74B5D /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -149,6 +146,7 @@
 				1BC6C33021988C7700320139 /* Sources */,
 				1BC6C33121988C7700320139 /* Frameworks */,
 				1BC6C33221988C7700320139 /* CopyFiles */,
+				1B9F541D21B3423B00A74B5D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -218,6 +216,41 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		1B6DBABD21B27406008851BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		1B9F541C21B3422300A74B5D /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		1B9F541D21B3423B00A74B5D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

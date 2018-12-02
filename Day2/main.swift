@@ -8,4 +8,7 @@
 
 import Foundation
 
-print("Hello, from Docker")
+// MARK: Get input data
+let input = read(file: "data", of: "txt")
+
+print(input)
