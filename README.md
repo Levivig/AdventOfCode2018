@@ -5,6 +5,15 @@ Being an iOS Developer I use Swift daily, but still I don't really know and use 
 
 Usage
 -----
+### Docker
+
+```sh
+docker run -it swift:4.2.1 /bin/bash
+git clone https://github.com/Levivig/AdventOfCode2018/
+cd AdventOfCode2018
+./run.sh 1
+```
+
 ### macOS
 Just open the Xcode project select the target you want and hit run.<br>
 The `run.sh` script will work too.
@@ -12,8 +21,12 @@ The `run.sh` script will work too.
 ### Ubuntu
 Run any day with the `run.sh` script.
 
-#### Example
-`./run.sh 1` will run day1.
+
+#### `run.sh` example
+```sh
+./run.sh 1
+``` 
+Will run the first days' exercises.
 
 Versions
 --------
@@ -39,4 +52,5 @@ Awesome AoC
 * [Awesome AoC](https://github.com/Bogdanp/awesome-advent-of-code) is a collection of
   awesome resources related to the yearly Advent of Code challenge
 * Awesome AoC / [Swift](https://github.com/Bogdanp/awesome-advent-of-code#swift)
+
 
