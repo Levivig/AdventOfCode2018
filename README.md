@@ -1,4 +1,4 @@
-# AdventOfCode2018
+# AdventOfCode2018 [![Build Status](https://travis-ci.org/Levivig/AdventOfCode2018.svg?branch=master)](https://travis-ci.org/Levivig/AdventOfCode2018)
 
 Being an iOS Developer I use Swift daily, but still I don't really know and use all the built in features of it. By solving these exercises my goal is to increase my pure Swift skills.
 
