@@ -78,12 +78,15 @@ private func getResult(_ code1: String, code2: String) -> String {
 
 measure {
     for (idx, code) in input.enumerated() {
+        var done = false
         for idx2 in idx+1..<input.count {
             let code2 = input[idx2]
             if distanceHamming(between: code, string2: code2) <= 1 {
                 print("Part2: \(getResult(code, code2: code2))")
+                done = true
                 break
             }
         }
+        if done { break }
     }
 }
