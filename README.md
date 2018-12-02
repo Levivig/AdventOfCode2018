@@ -8,6 +8,8 @@ Usage
 ### Docker
 
 ```sh
+# get the latest image
+docker pull levivig/adventofcode
 docker run -it levivig/adventofcode /bin/bash
 
 ./run.sh 1
