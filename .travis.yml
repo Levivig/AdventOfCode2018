@@ -1,10 +1,18 @@
-dist: trusty
+sudo: required
+services:
+  - docker
 
-jobs:
-  include:
-    - stage: build docker image
-      script:
-      - docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - docker build --no-cache -t levivig/adventofcode . 
-      - docker images
-      - docker push $DOCKER_USERNAME/adventofcode
+script:
+  - docker build --no-cache -t levivig/adventofcode . 
+  - docker run levivig/adventofcode
+
+after_script:
+  - docker images
+
+before_deploy:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+deploy:
+  provider: script
+  script: docker push levivig/adventofcode
+  on:
+    branch: master
