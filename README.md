@@ -8,9 +8,8 @@ Usage
 ### Docker
 
 ```sh
-docker run -it swift:4.2.1 /bin/bash
-git clone https://github.com/Levivig/AdventOfCode2018/
-cd AdventOfCode2018
+docker run -it levivig/adventofcode /bin/bash
+
 ./run.sh 1
 ```
 
