@@ -6,7 +6,7 @@ Being an iOS Developer I use Swift daily, but still I don't really know and use 
 Usage
 -----
 ### macOS
-Just open the Xcode project select the target you want and hit run.
+Just open the Xcode project select the target you want and hit run.<br>
 The `run.sh` script will work too.
 
 ### Ubuntu
@@ -39,3 +39,4 @@ Awesome AoC
 * [Awesome AoC](https://github.com/Bogdanp/awesome-advent-of-code) is a collection of
   awesome resources related to the yearly Advent of Code challenge
 * Awesome AoC / [Swift](https://github.com/Bogdanp/awesome-advent-of-code#swift)
+
