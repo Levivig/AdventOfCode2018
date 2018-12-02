@@ -10,7 +10,7 @@ Just open the Xcode project select the target you want and hit run.
 The `run.sh` script will work too.
 
 ### Ubuntu
-To run this on Ubuntu use the [`linux`](https://github.com/Levivig/AdventOfCode2018/tree/linux) branch, and run any day with the `run.sh` script.
+Run any day with the `run.sh` script.
 
 #### Example
 `./run.sh 1` will run day1.
